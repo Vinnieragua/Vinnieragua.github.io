@@ -349,15 +349,46 @@ section {
     margin-bottom: 10px;
 }
 
-/* Contact Form Styles */
-.contact-form,
-.guestbook-form {
-    max-width: 500px;
+/* Email Contact Styles */
+.email-contact {
+    max-width: 600px;
     margin: 30px auto;
     padding: 30px;
     background: rgba(0, 0, 0, 0.9);
     border: 2px solid #FF8C00;
     border-radius: 10px;
+    text-align: center;
+}
+
+.email-description {
+    color: #FFFF00;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.email-button-container {
+    margin: 30px 0;
+}
+
+.email-button {
+    display: inline-block;
+    padding: 20px 30px;
+    background: linear-gradient(45deg, #FF4500, #FF8C00);
+    border: 3px solid #FFFF00;
+    border-radius: 10px;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-family: 'Courier Prime', monospace;
+    transition: all 0.3s ease;
+}
+
+.email-button:hover {
+    background: linear-gradient(45deg, #FF8C00, #FF4500);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #FF8C00;
+    color: #000000;
 }
 
 .form-group {
@@ -409,40 +440,7 @@ section {
     box-shadow: 0 0 15px #FF8C00;
 }
 
-/* Guestbook Styles */
-.guestbook-entries {
-    max-width: 500px;
-    margin: 30px auto;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.9);
-    border: 2px solid #FF8C00;
-    border-radius: 10px;
-}
 
-.guestbook-entry {
-    margin: 20px 0;
-    padding: 15px;
-    background: rgba(255, 140, 0, 0.1);
-    border-left: 4px solid #FFFF00;
-    border-radius: 5px;
-}
-
-.entry-name {
-    color: #00FF00;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-.entry-message {
-    margin-bottom: 10px;
-    line-height: 1.4;
-}
-
-.entry-date {
-    color: #FF8C00;
-    font-size: 0.9rem;
-    font-style: italic;
-}
 
 /* Footer */
 footer {
