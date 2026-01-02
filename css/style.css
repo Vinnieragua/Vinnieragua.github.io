@@ -75,26 +75,27 @@ body {
     list-style: none;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-wrap: nowrap;
+    gap: 10px;
     padding: 20px;
     background: linear-gradient(45deg, #FF4500, #FF8C00);
     border: 3px solid #FFFF00;
     border-radius: 10px;
     margin: 20px auto;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .nav-menu li a {
     color: #000000;
     text-decoration: none;
     font-weight: 700;
-    padding: 10px 15px;
+    padding: 8px 12px;
     background: #FFFF00;
     border: 2px solid #FF8C00;
     border-radius: 5px;
     transition: all 0.3s ease;
     font-family: 'Courier Prime', monospace;
+    white-space: nowrap;
 }
 
 .nav-menu li a:hover,
