@@ -1,51 +1,65 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <style>
-      body {
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Ubuntu, sans-serif;
-        padding: 1rem;
-        margin: 0;
-      }
-      .hello {
-        font-size: 2em;
-      }
-      h1 {
-        margin: 0 0 1rem;
-      }
-      ul {
-        margin: calc(1rem - 2px) 0 1rem 0;
-        padding-left: 1.5em;
-      }
-      li {
-        padding: 2px 0;
-      }
-      a {
-        color: #03a9f4;
-      }
-    </style>
-  </head>
-  <body>
-    <div class='hello'>👋</div>
-    <h1>Vincent Schoutsen</h1>
-    Uitvinder. Muzikant.
-    <ul>
-      <li><a rel="me" href="https://www.instagram.com/vschoutsen/">Instagram</a></li>
-    </ul>
-    <script>
-      window.addEventListener(
-        "DOMContentLoaded",
-        () => {
-          const ul = document.querySelector("ul");
-          const li = document.createElement("li");
-          li.innerHTML = `<a href="mailto:einniv@${"gmail.com"}">Email</a>`;
-          ul.append(li);
-        },
-        { once: true }
-      );
-    </script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinnieragua - Performing Engineer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="starry-bg"></div>
+    
+    <header>
+        <div class="logo-container">
+            <h1 class="wordart-logo">Vinnieragua</h1>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2 class="glowing-text">Welcome to My Digital Space!</h2>
+            <p class="artist-intro">
+                I am Vinnieragua - a Performing Engineer creating musical installation art and 
+                interactive technical installations from found objects and recycled materials.
+            </p>
+            <div class="rainbow-divider"></div>
+        </section>
+
+        <section class="highlights">
+            <h3 class="neon-text">Recent Highlights</h3>
+            <ul class="highlights-list">
+                <li>🎵 Interactive Sound Sculptures</li>
+                <li>🔧 Technical Art Performances</li>
+                <li>🎭 Trash Art Installations</li>
+                <li>✨ Found Object Creations</li>
+            </ul>
+        </section>
+
+        <section class="visitor-counter">
+            <p class="counter-text">
+                You are visitor number <span id="hit-counter">303</span> to this digital realm!
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Vinnieragua - Performing Engineer</p>
+            <p>All rights reserved | Made with 💻 and 🎵</p>
+        </div>
+    </footer>
+
+    <script src="js/glitter.js"></script>
+    <script src="js/counter.js"></script>
+</body>
 </html>
