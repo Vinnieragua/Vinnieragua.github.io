@@ -462,6 +462,14 @@ section {
     margin-bottom: 10px;
 }
 
+.event-image {
+    max-width: 200px;
+    height: auto;
+    margin-top: 10px;
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+}
+
 /* Blog Styles */
 .blog-post {
     margin: 40px 0;
