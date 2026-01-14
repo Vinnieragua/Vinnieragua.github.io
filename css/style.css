@@ -625,6 +625,15 @@ section {
     transition: opacity 0.3s ease;
 }
 
+/* About page artist photo */
+.framed-photo {
+    max-width: 200px;
+    height: auto;
+    border: 3px solid #FF8C00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+}
+
 /* Footer */
 footer {
     margin-top: 50px;
