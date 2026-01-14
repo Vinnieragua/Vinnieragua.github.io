@@ -114,6 +114,8 @@
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
+        <a class="modal-nav modal-prev" id="prevBtn">&#10094;</a>
+        <a class="modal-nav modal-next" id="nextBtn">&#10095;</a>
     </div>
 
     <script src="js/glitter.js"></script>
@@ -122,37 +124,100 @@
         const modal = document.getElementById('imageModal');
         const modalImg = document.getElementById('modalImage');
         const closeBtn = document.getElementsByClassName('close')[0];
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
         
         // Get all gallery photos
         const galleryPhotos = document.querySelectorAll('.gallery-photo');
+        let currentImageIndex = 0;
         
         // Add click event to each photo
-        galleryPhotos.forEach(photo => {
+        galleryPhotos.forEach((photo, index) => {
             photo.addEventListener('click', function() {
-                modal.style.display = 'block';
-                modalImg.src = this.src;
-                modalImg.alt = this.alt;
+                currentImageIndex = index;
+                showModal(this.src, this.alt);
             });
         });
         
-        // Close modal when clicking the X
-        closeBtn.onclick = function() {
-            modal.style.display = 'none';
+        function showModal(src, alt) {
+            modal.style.display = 'block';
+            modalImg.src = src;
+            modalImg.alt = alt;
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
+        
+        function hideModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+        
+        // Navigation functions
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+            const prevPhoto = galleryPhotos[currentImageIndex];
+            showModal(prevPhoto.src, prevPhoto.alt);
+        }
+        
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryPhotos.length;
+            const nextPhoto = galleryPhotos[currentImageIndex];
+            showModal(nextPhoto.src, nextPhoto.alt);
+        }
+        
+        // Event listeners
+        closeBtn.onclick = hideModal;
+        prevBtn.onclick = showPrevImage;
+        nextBtn.onclick = showNextImage;
         
         // Close modal when clicking outside the image
         modal.onclick = function(event) {
             if (event.target == modal) {
-                modal.style.display = 'none';
+                hideModal();
             }
         }
         
-        // Close modal with Escape key
+        // Keyboard navigation
         document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modal.style.display === 'block') {
-                modal.style.display = 'none';
+            if (modal.style.display === 'block') {
+                switch(event.key) {
+                    case 'Escape':
+                        hideModal();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevImage();
+                        break;
+                    case 'ArrowRight':
+                        showNextImage();
+                        break;
+                }
             }
         });
+        
+        // Touch/swipe support for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        modal.addEventListener('touchstart', function(event) {
+            touchStartX = event.changedTouches[0].screenX;
+        });
+        
+        modal.addEventListener('touchend', function(event) {
+            touchEndX = event.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    showNextImage(); // Swipe left, show next
+                } else {
+                    showPrevImage(); // Swipe right, show previous
+                }
+            }
+        }
     </script>
 </body>
 </html>
