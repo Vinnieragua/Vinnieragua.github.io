@@ -606,9 +606,9 @@ section {
 }
 
 .main-display-image {
-    max-width: 400px;
-    width: 100%;
-    height: auto;
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
     border: 3px solid #FF8C00;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
@@ -625,7 +625,7 @@ footer {
 }
 
 .footer-image {
-    max-width: 200px;
+    max-width: 100px;
     height: auto;
     margin-bottom: 20px;
     border: 2px solid #FFFF00;
