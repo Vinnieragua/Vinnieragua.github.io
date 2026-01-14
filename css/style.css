@@ -287,6 +287,25 @@ section {
     align-items: center;
 }
 
+.video-embed {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #FF8C00;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-embed iframe {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #FFFF00;
+}
+
 .video-title {
     color: #00FF00;
     margin-bottom: 10px;
@@ -301,9 +320,24 @@ section {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin: 20px 0;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #FF8C00;
+    transition: all 0.3s ease;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #FF8C00;
+    border-color: #FFFF00;
 }
 
 .gif-container {
@@ -551,6 +585,61 @@ footer {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(45deg, #FF8C00, #FF4500);
+}
+
+/* Image Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid #FF8C00;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #FFFF00;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close:hover {
+    color: #FF8C00;
+    text-shadow: 0 0 10px #FF8C00;
 }
 
 /* Selection Styling */
