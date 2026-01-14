@@ -11,7 +11,7 @@
     
     <header>
         <div class="logo-container">
-            <h1 class="wordart-logo">Vinnieragua</h1>
+            <img src="logos/wordart.png" alt="Vinnieragua" class="wordart-logo-img">
         </div>
         <nav>
             <ul class="nav-menu">
@@ -28,6 +28,9 @@
     <main>
         <section class="intro">
             <h2 class="glowing-text">Welcome to My Digital Space!</h2>
+            <div class="image-switcher">
+                <img src="logos/hoofd.png" alt="Main Image" id="main-image" class="main-display-image">
+            </div>
             <p class="artist-intro">
                 I am Vinnieragua - a Performing Engineer creating musical installation art and 
                 interactive technical installations from found objects and recycled materials.
@@ -78,6 +81,7 @@
 
     <footer>
         <div class="footer-content">
+            <img src="logos/Volop space.png" alt="Volop Space" class="footer-image">
             <p>&copy; 2026 Vinnieragua - Performing Engineer</p>
             <p>All rights reserved | Made with 💻 and 🎵</p>
         </div>
@@ -85,5 +89,24 @@
 
     <script src="js/glitter.js"></script>
     <script src="js/counter.js"></script>
+    <script>
+        // Image switching functionality
+        const mainImage = document.getElementById('main-image');
+        const images = ['logos/hoofd.png', 'logos/bam.jpg']; // Assuming bam.jpg is the fractal image
+        let currentImageIndex = 0;
+
+        function switchImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            mainImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                mainImage.src = images[currentImageIndex];
+                mainImage.style.opacity = '1';
+            }, 300);
+        }
+
+        // Switch images every 3 seconds
+        setInterval(switchImage, 3000);
+    </script>
 </body>
 </html>

@@ -43,6 +43,18 @@ body {
 }
 
 /* WordArt Logo */
+.wordart-logo-img {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    filter: drop-shadow(3px 3px 0px #FF4500) 
+            drop-shadow(6px 6px 0px #FF6347) 
+            drop-shadow(9px 9px 0px #FF0000) 
+            drop-shadow(12px 12px 10px rgba(255, 69, 0, 0.5));
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
 .wordart-logo {
     font-family: 'Courier Prime', monospace;
     font-size: 3rem;
@@ -587,6 +599,22 @@ section {
 
 
 
+/* Image Switcher */
+.image-switcher {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.main-display-image {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    border: 3px solid #FF8C00;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
 /* Footer */
 footer {
     margin-top: 50px;
@@ -594,6 +622,15 @@ footer {
     background: linear-gradient(45deg, #FF4500, #FF8C00);
     border-top: 3px solid #FFFF00;
     text-align: center;
+}
+
+.footer-image {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+    border: 2px solid #FFFF00;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
 }
 
 .footer-content p {
